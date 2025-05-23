@@ -2,7 +2,7 @@ import { ArrowButton } from 'src/ui/arrow-button';
 import { Button } from 'src/ui/button';
 
 import styles from './ArticleParamsForm.module.scss';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useRef, useState } from 'react';
 import clsx from 'clsx';
 import { Select } from 'src/ui/select';
 import {
@@ -18,6 +18,7 @@ import {
 import { RadioGroup } from 'src/ui/radio-group';
 import { Separator } from 'src/ui/separator';
 import { Text } from 'src/ui/text';
+import { useCloseSidebar } from './hooks/useCloseSidebar';
 
 type ArticleParamsFormProps = {
 	changeCallback: (change: ArticleStateType) => void;
@@ -26,12 +27,12 @@ type ArticleParamsFormProps = {
 export const ArticleParamsForm = ({
 	changeCallback,
 }: ArticleParamsFormProps) => {
-	const [isOpen, setIsOpen] = useState<boolean>(false);
+	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 	const [unsubmittedParams, setUnsubmittedParams] =
 		useState<ArticleStateType>(defaultArticleState);
 
 	const toggleOpenState = () => {
-		setIsOpen(!isOpen);
+		setIsMenuOpen(!isMenuOpen);
 	};
 
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -48,11 +49,18 @@ export const ArticleParamsForm = ({
 		setUnsubmittedParams({ ...unsubmittedParams, [name]: change });
 	};
 
+	const sideBarElement = useRef<HTMLElement>(null);
+
+	useCloseSidebar(isMenuOpen, setIsMenuOpen, sideBarElement);
+
 	return (
 		<>
-			<ArrowButton isOpen={isOpen} onClick={toggleOpenState} />
 			<aside
-				className={clsx(styles.container, { [styles.container_open]: isOpen })}>
+				className={clsx(styles.container, {
+					[styles.container_open]: isMenuOpen,
+				})}
+				ref={sideBarElement}>
+				<ArrowButton isOpen={isMenuOpen} onClick={toggleOpenState} />
 				<form
 					className={styles.form}
 					onSubmit={handleSubmit}

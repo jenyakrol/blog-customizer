@@ -2,3 +2,115 @@
 	--bg-color: #ffffff;
 	background-color: var(--bg-color, #ffffff);
 }
+
+.open-sans {
+	--font-family: 'Open Sans';
+}
+
+.ubuntu {
+	--font-family: 'Ubuntu';
+}
+
+.cormorant-garamond {
+	--font-family: 'Cormorant Garamond';
+}
+
+.days-one {
+	--font-family: 'Days One';
+}
+
+.merriweather {
+	--font-family: 'Merriweather';
+}
+
+.font-black {
+	--font-color: #000000;
+}
+
+.font-white {
+	--font-color: #ffffff;
+}
+
+.font-gray {
+	--font-color: #c4c4c4;
+}
+
+.font-pink {
+	--font-color: #feafe8;
+}
+
+.font-fuchsia {
+	--font-color: #fd24af;
+}
+
+.font-yellow {
+	--font-color: #ffc802;
+}
+
+.font-green {
+	--font-color: #80d994;
+}
+
+.font-blue {
+	--font-color: #6fc1fd;
+}
+
+.font-purple {
+	--font-color: #5f0dee;
+}
+
+.bg-white {
+	--bg-color: #ffffff;
+}
+
+.bg-black {
+	--bg-color: #000000;
+}
+
+.bg-gray {
+	--bg-color: #c4c4c4;
+}
+
+.bg-pink {
+	--bg-color: #feafe8;
+}
+
+.bg-fuchsia {
+	--bg-color: #fd24af;
+}
+
+.bg-yellow {
+	--bg-color: #ffc802;
+}
+
+.bg-green {
+	--bg-color: #80d994;
+}
+
+.bg-blue {
+	--bg-color: #6fc1fd;
+}
+
+.bg-purple {
+	--bg-color: #5f0dee;
+}
+
+.width-wide {
+	--container-width: 1394px;
+}
+
+.width-narrow {
+	--container-width: 948px;
+}
+
+.font-size-18 {
+	--font-size: 18px;
+}
+
+.font-size-25 {
+	--font-size: 25px;
+}
+
+.font-size-38 {
+	--font-size: 38px;
+}
